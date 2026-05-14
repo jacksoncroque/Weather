@@ -1,0 +1,90 @@
+@use "sass:map";
+@use "@/styles/queries";
+
+.container {
+  background-color: #0c006b;
+
+  &Wrapper {
+    width: 90%;
+    height: 4rem;
+    max-width: map.get(queries.$breakpoints, xll);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &Title {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      & > img {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 1rem 0 0;
+      }
+      & > h1 {
+        font-weight: var(--font-weight-regular);
+        color: var(--text-color);
+        font-size: 1rem;
+      }
+    }
+
+    &Nav {
+      position: relative;
+      display: flex;
+      width: 100%;
+      max-width: 31.25rem;
+      height: 2.5rem;
+
+      & > svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 0 0 1rem;
+        color: #aaabab;
+        z-index: 1;
+      }
+
+      & > input {
+        all: unset;
+        width: 100%;
+        height: 100%;
+        background-color: #242c77;
+        border-radius: 9999px;
+        display: block;
+        padding: 0 0 0 3rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          filter: brightness(110%);
+        }
+
+        &::placeholder {
+          color: #aaabab;
+        }
+      }
+    }
+
+    &List {
+      display: flex;
+      align-items: center;
+
+      & > li {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          filter: brightness(80%);
+        }
+
+        &:not(:last-child) {
+          margin: 0 0.5rem 0 0;
+        }
+
+        & a > svg {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-createRoot(document.getElementById('root')).render(
+import "@fontsource/inter/200.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
+
+import App from "./App.jsx";
+
+
+import "./styles/reset.scss";
+import "./styles/global.scss";
+
+
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
   </StrictMode>,
-)
+);

@@ -1,3 +1,18 @@
 :root {
-    
+  // Cores
+  --primary-color: #0a84ff;
+  --secondary-color: #5e5ce6;
+  --tertiary-color: #dd6001;
+  --text-color: #fff;
+
+  // Fonte
+  --font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  // Pesos de fonte
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  // Scrollbar
+  --scrollbar-size: 6px;
 }

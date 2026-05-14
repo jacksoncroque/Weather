@@ -1,0 +1,44 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin respond($breakpoint, $type: min) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+
+    @if $type == min {
+      @media (min-width: $size) {
+        @content;
+      }
+    } @else if $type == max {
+      @media (max-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' não existe.";
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 576.5px) and (max-width: 991.5px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
