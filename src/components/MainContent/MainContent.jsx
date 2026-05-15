@@ -1,5 +1,6 @@
 import Hero from "../Hero/Hero";
 import HourlyForecast from "../HourlyForecast/HourlyForecast";
+import TenForecast from "../TenForecast/TenForecast";
 
 import styles from "./MainContent.module.scss";
 
@@ -54,11 +55,85 @@ const forecast = [
   },
 ];
 
+const tenDayForecast = [
+  {
+    id: 1,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 2,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 3,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 4,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 5,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 6,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 7,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 8,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 9,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+  {
+    id: 10,
+    day: "Today",
+    icon: "/public/forecastIcons/cloudy_night.svg",
+    t1: "16°",
+    t2: "21°",
+  },
+];
+
 const MainContent = () => {
   return (
     <div className={styles.container}>
       <Hero />
       <HourlyForecast forecast={forecast} />
+      <TenForecast tenDayForecast={tenDayForecast} />
     </div>
   );
 };

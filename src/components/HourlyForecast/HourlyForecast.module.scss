@@ -1,7 +1,38 @@
 .container {
   &Wrapper {
+    background-color: var(--secondary-color);
+    padding: 1rem 1rem;
+    border-radius: var(--border-radius);
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+    & > h3 {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      margin: 0 0 0.5rem 0;
+
+      & > svg {
+        margin: 0 0.25rem 0 0;
+      }
+    }
+
     &Climate {
+      display: flex;
+      align-items: center;
+
       & > span {
+        margin: 0 1.5rem 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > h6,
+        p {
+          font-size: var(--secondary-text);
+        }
+
         & > img {
           width: 2rem;
           height: 2rem;
