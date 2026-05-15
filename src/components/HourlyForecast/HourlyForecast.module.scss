@@ -1,0 +1,13 @@
+.container {
+  &Wrapper {
+    &Climate {
+      & > span {
+        & > img {
+          width: 2rem;
+          height: 2rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
