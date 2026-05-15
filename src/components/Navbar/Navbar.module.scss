@@ -5,8 +5,8 @@
   background-color: #0c006b;
 
   &Wrapper {
+    height: var(--navbar-height);
     width: 90%;
-    height: 4rem;
     max-width: map.get(queries.$breakpoints, xll);
     margin: 0 auto;
     display: flex;

@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+
+    & > h1 {
+      font-size: 6rem;
+      font-weight: var(--font-weight-light);
+      letter-spacing: -2px;
+    }
+
+    &Temperature {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & > h2 {
+        font-size: 6rem;
+        font-weight: var(--font-weight-light);
+      }
+
+      &Details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 0 0 1rem;
+
+        & > h4 {
+          font-weight: var(--font-weight-bold);
+        }
+
+        & > p {
+          font-weight: var(--font-weight-light);
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &Warning {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > span {
+        display: flex;
+        align-items: center;
+        background-color: var(--secondary-color);
+        border-radius: 9999px;
+        padding: 0.5rem 1rem;
+        font-size: var(--secondary-text);
+        box-shadow:
+          rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+        &:first-of-type {
+          margin: 0 0 0 1.5rem;
+          & > svg {
+            color: #0a84ff;
+            margin: 0 0.5rem 0 0;
+          }
+        }
+
+        &:last-of-type {
+          margin: 0 1.5rem 0 0;
+
+          & > svg {
+            color: yellow;
+            margin: 0 0.5rem 0 0;
+          }
+        }
+      }
+    }
+  }
+}

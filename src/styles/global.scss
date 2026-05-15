@@ -7,12 +7,16 @@
 
   // Fonte
   --font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --secondary-text: 1rem;
 
   // Pesos de fonte
-  --font-weight-light: 300;
+  --font-weight-light: 100;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
   // Scrollbar
   --scrollbar-size: 6px;
+
+  // Navbar
+  --navbar-height: 4rem;
 }
