@@ -1,23 +1,24 @@
-import { Sun } from "lucide-react";
+import { DropletsIcon } from "lucide-react";
+import styles from "./Humidity.module.scss";
 
-import styles from "./UvIndex.module.scss";
-
-const UvIndex = () => {
+const Humidity = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperTitle}>
           <h3>
-            <Sun /> ÍNDICE UV
+            <DropletsIcon /> UMIDADE
           </h3>
-          <p>2 <span>Baixo</span></p>
+          <p>
+            69 <span>%</span>
+          </p>
         </div>
         <div className={styles.containerWrapperSubtitle}>
-          <p>Baixo no restante do dia</p>
+          <p>O ponto de orvalho é de 10° agora</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default UvIndex;
+export default Humidity;

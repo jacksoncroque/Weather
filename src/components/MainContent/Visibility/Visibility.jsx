@@ -1,23 +1,24 @@
-import { Sun } from "lucide-react";
+import { Eye } from "lucide-react";
+import styles from "./Visibility.module.scss";
 
-import styles from "./UvIndex.module.scss";
-
-const UvIndex = () => {
+const Visibility = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperTitle}>
           <h3>
-            <Sun /> ÍNDICE UV
+            <Eye /> VISIBILIDADE
           </h3>
-          <p>2 <span>Baixo</span></p>
+          <p>
+            30 <span>Km</span>
+          </p>
         </div>
         <div className={styles.containerWrapperSubtitle}>
-          <p>Baixo no restante do dia</p>
+          <p>Visibilidade excelente</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default UvIndex;
+export default Visibility;

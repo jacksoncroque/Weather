@@ -1,23 +1,24 @@
-import { Sun } from "lucide-react";
+import { Thermometer } from "lucide-react";
+import styles from "./Pressure.module.scss";
 
-import styles from "./UvIndex.module.scss";
-
-const UvIndex = () => {
+const Pressure = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperTitle}>
           <h3>
-            <Sun /> ÍNDICE UV
+            <Thermometer /> PRESSÃO
           </h3>
-          <p>2 <span>Baixo</span></p>
+          <p>
+            1.016 <span>mbar</span>
+          </p>
         </div>
         <div className={styles.containerWrapperSubtitle}>
-          <p>Baixo no restante do dia</p>
+          <p>Estável pelas últimas 3h.</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default UvIndex;
+export default Pressure;

@@ -1,23 +1,24 @@
-import { Sun } from "lucide-react";
+import { WindIcon } from "lucide-react";
+import styles from "./Wind.module.scss";
 
-import styles from "./UvIndex.module.scss";
-
-const UvIndex = () => {
+const Wind = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperTitle}>
           <h3>
-            <Sun /> ÍNDICE UV
+            <WindIcon /> VENTO
           </h3>
-          <p>2 <span>Baixo</span></p>
+          <p>
+            15 <span>Km/h</span>
+          </p>
         </div>
         <div className={styles.containerWrapperSubtitle}>
-          <p>Baixo no restante do dia</p>
+          <p>Rajadas de até 22Km/h.</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default UvIndex;
+export default Wind;
