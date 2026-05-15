@@ -1,8 +1,9 @@
 import Hero from "../Hero/Hero";
-import HourlyForecast from "../HourlyForecast/HourlyForecast";
-import TenForecast from "../TenForecast/TenForecast";
+import HourlyForecast from "./HourlyForecast/HourlyForecast";
+import TenForecast from "./TenForecast/TenForecast";
 
 import styles from "./MainContent.module.scss";
+import UvIndex from "./UvIndex/UvIndex";
 
 const forecast = [
   {
@@ -132,8 +133,23 @@ const MainContent = () => {
   return (
     <div className={styles.container}>
       <Hero />
-      <HourlyForecast forecast={forecast} />
-      <TenForecast tenDayForecast={tenDayForecast} />
+
+      <div className={styles.containerWrapper}>
+        <div className={styles.containerWrapperMain}>
+          <HourlyForecast forecast={forecast} />
+        </div>
+        <div className={styles.containerWrapperAside}>
+          <TenForecast tenDayForecast={tenDayForecast} />
+        </div>
+        <div className={styles.containerWrapperUv}>
+          <UvIndex />
+        </div>
+        <div className={styles.containerWrapperWind}>kk</div>
+        <div className={styles.containerWrapperHumidity}>kk</div>
+        <div className={styles.containerWrapperVisibility}>kk</div>
+        <div className={styles.containerWrapperPressure}>kk</div>
+        <div className={styles.containerWrapperRain}>kk</div>
+      </div>
     </div>
   );
 };
