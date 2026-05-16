@@ -1,4 +1,4 @@
-import { MapIcon } from "lucide-react";
+import { ThermometerSnowflake } from "lucide-react";
 import styles from "./Map.module.scss";
 
 const Map = () => {
@@ -7,8 +7,12 @@ const Map = () => {
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperTitle}>
           <h3>
-            <MapIcon /> MAPA DA CHUVA
+            <ThermometerSnowflake /> SENSAÇÃO
           </h3>
+          <p>10°</p>
+        </div>
+        <div className={styles.containerWrapperSubtitle}>
+          <p>O vento está baixando a sensação térmica.</p>
         </div>
       </div>
     </div>

@@ -141,28 +141,32 @@ const MainContent = () => {
 
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperMain}>
-          <HourlyForecast forecast={forecast} />
-        </div>
-        <div className={styles.containerWrapperAside}>
-          <TenForecast tenDayForecast={tenDayForecast} />
-        </div>
-        <div className={styles.containerWrapperUv}>
-          <UvIndex />
-        </div>
-        <div className={styles.containerWrapperWind}>
-          <Wind />
-        </div>
-        <div className={styles.containerWrapperHumidity}>
-          <Humidity />
-        </div>
-        <div className={styles.containerWrapperVisibility}>
-          <Visibility />
-        </div>
-        <div className={styles.containerWrapperPressure}>
-          <Pressure />
-        </div>
-        <div className={styles.containerWrapperRain}>
-          <Map />
+          <div>
+            <HourlyForecast forecast={forecast} />
+            <div className={styles.containerWrapperMainGrid}>
+              <div>
+                <UvIndex />
+              </div>
+              <div>
+                <Wind />
+              </div>
+              <div>
+                <Humidity />
+              </div>
+              <div>
+                <Visibility />
+              </div>
+              <div>
+                <Pressure />
+              </div>
+              <div>
+                <Map />
+              </div>
+            </div>
+          </div>
+          <div>
+            <TenForecast tenDayForecast={tenDayForecast} />
+          </div>
         </div>
       </div>
     </div>

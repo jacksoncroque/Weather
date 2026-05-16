@@ -9,45 +9,32 @@
   background-color: #181f67;
 
   &Wrapper {
-    display: grid;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 9rem;
     max-width: map.get(queries.$breakpoints, xll);
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
 
     &Main {
-      grid-area: 1 / 2 / 2 / 5;
-    }
+      display: flex;
+      margin: 0 6rem;
 
-    &Aside {
-      grid-area: 1 / 5 / 4 / 6;
-    }
+      & > div {
+        &:first-of-type {
+          flex: 4;
+          padding: 0 0.5rem 0 0;
+        }
 
-    &Uv {
-      grid-area: 2 / 2 / 3 / 3;
-    }
+        &:last-of-type {
+          flex: 2.5;
+          padding: 0 0 0 0.5rem;
+        }
+      }
 
-    &Wind {
-      grid-area: 2 / 3 / 3 / 4;
-    }
-
-    &Humidity {
-      grid-area: 2 / 4 / 3 / 5;
-    }
-
-    &Visibility {
-      grid-area: 3 / 2 / 4 / 3;
-    }
-
-    &Pressure {
-      grid-area: 3 / 3 / 4 / 4;
-    }
-
-    &Rain {
-      grid-area: 3 / 4 / 4 / 5;
+      &Grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 1rem 0 0;
+      }
     }
   }
 }
