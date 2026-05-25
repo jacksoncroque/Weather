@@ -36,7 +36,7 @@ const Hero = () => {
             <DropletIcon size={20} color="white" />
             {`Preciptação: ${Math.ceil(currentForecast?.mainInfo.preciptation ?? 0) || "0"}`}
           </span>
-          {currentForecast.mainInfo.alertEvent !== null ? (
+          {currentForecast?.mainInfo.alertEvent ? (
             <span>
               <CiWarning size={20} /> {currentForecast?.mainInfo.alertEvent ?? null}
             </span>

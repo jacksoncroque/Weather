@@ -44,7 +44,7 @@ export function ForecastModel(data) {
           id: item.time_epoch,
           hour: item.time.split(" ")[1],
           icon: item.condition.icon,
-          temperature: `${item.temp_c}°`,
+          temperature: `${Math.ceil(item.temp_c)}°`,
         };
       }),
   };
