@@ -1,17 +1,13 @@
 import { MdOutlineWatchLater } from "react-icons/md";
 
-import styles from "./HourlyForecast.module.scss";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
-import { useEffect } from "react";
+
+import styles from "./HourlyForecast.module.scss";
 
 const HourlyForecast = () => {
   const {
     state: { currentForecast },
   } = useGlobalContext();
-
-  useEffect(() => {
-    console.log(currentForecast);
-  }, [currentForecast]);
 
   return (
     <div className={styles.container}>

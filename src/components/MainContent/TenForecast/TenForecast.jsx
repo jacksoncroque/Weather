@@ -1,7 +1,19 @@
 import { Calendar } from "lucide-react";
-import styles from "./TenForecast.module.scss";
 
-const TenForecast = ({ tenDayForecast }) => {
+import { useGlobalContext } from "../../../contexts/GlobalContext";
+
+import styles from "./TenForecast.module.scss";
+import { useEffect } from "react";
+
+const TenForecast = () => {
+  const {
+    state: { tenDayForecast },
+  } = useGlobalContext();
+
+  useEffect(() => {
+    console.log(tenDayForecast);
+  }, [tenDayForecast]);
+
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
@@ -12,10 +24,13 @@ const TenForecast = ({ tenDayForecast }) => {
           {tenDayForecast.map((item) => {
             return (
               <div key={item.id} className={styles.containerWrapperDaysWeek}>
-                <p>{item.day}</p>
+                <p>
+                  {String(item.dayOfWeek).charAt(0).toUpperCase() +
+                    item.dayOfWeek.slice(1)}
+                </p>
                 <img src={item.icon} alt="" />
-                <p>{item.t1}--</p>
-                <p>--{item.t2}</p>
+                <p>{Math.ceil(item.minTemp)}</p>
+                <p>{Math.ceil(item.maxTemp)}</p>
               </div>
             );
           })}

@@ -2,17 +2,14 @@ import { useEffect } from "react";
 import { DropletIcon } from "lucide-react";
 import { CiWarning } from "react-icons/ci";
 
-import styles from "./Hero.module.scss";
 import { useGlobalContext } from "../../contexts/GlobalContext";
+
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   const {
     state: { currentForecast },
   } = useGlobalContext();
-
-  useEffect(() => {
-    console.log(currentForecast);
-  }, [currentForecast]);
 
   return (
     <div className={styles.container}>
@@ -38,7 +35,8 @@ const Hero = () => {
           </span>
           {currentForecast?.mainInfo.alertEvent ? (
             <span>
-              <CiWarning size={20} /> {currentForecast?.mainInfo.alertEvent ?? null}
+              <CiWarning size={20} />{" "}
+              {currentForecast?.mainInfo.alertEvent ?? null}
             </span>
           ) : (
             ""

@@ -1,7 +1,14 @@
 import { Thermometer } from "lucide-react";
+
+import { useGlobalContext } from "../../../contexts/GlobalContext";
+
 import styles from "./Pressure.module.scss";
 
 const Pressure = () => {
+  const {
+    state: { currentForecast },
+  } = useGlobalContext();
+
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
@@ -10,7 +17,7 @@ const Pressure = () => {
             <Thermometer /> PRESSÃO
           </h3>
           <p>
-            1.016 <span>mbar</span>
+            {currentForecast?.current.pressure ?? "-"} <span>mbar</span>
           </p>
         </div>
         <div className={styles.containerWrapperSubtitle}>

@@ -1,3 +1,6 @@
+import moment from "moment/min/moment-with-locales";
+moment.locale("pt-br");
+
 export function ForecastModel(data) {
   const [date, hour] = new Date()
     .toLocaleString("sv-SE", {
@@ -65,6 +68,7 @@ export function FutureForecastModel(data) {
         icon: day.day.condition.icon,
         maxTemp: day.day.maxtemp_c,
         date: day.date,
+        dayOfWeek: moment(day.date).format("dddd"),
       };
     }),
   };

@@ -58,7 +58,7 @@ const GlobalProvider = ({ children }) => {
       }));
 
       const forecast = await getForecast(city);
-      const futureForecast = await getFutureForecast(city, 12);
+      const futureForecast = await getFutureForecast(city, 10);
 
       setState((prev) => ({
         ...prev,
