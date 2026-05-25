@@ -19,6 +19,10 @@
       a {
         font-size: var(--secondary-text);
       }
+
+      & > p a:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

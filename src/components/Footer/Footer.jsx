@@ -14,7 +14,14 @@ const Footer = () => {
             >
               <em>Jackson</em>
             </a>{" "}
-            | Weather data from OpenWeather
+            | Weather data from{" "}
+            <a
+              href="https://www.weatherapi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <em>Weather API</em>
+            </a>
           </p>
         </div>
       </div>

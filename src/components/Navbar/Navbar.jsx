@@ -2,9 +2,13 @@ import { SearchIcon } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
+import { useGlobalContext } from "@/contexts/GlobalContext";
+
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+  const { state, handleSearchInputChange } = useGlobalContext();
+
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
@@ -19,7 +23,9 @@ const Navbar = () => {
             name="searchInput"
             title="Pesquisar cidade"
             aria-label="Pesquisar cidade"
-            placeholder="Pesquisar cidade...          "
+            placeholder="Pesquisar cidade..."
+            value={state.inputValue}
+            onChange={handleSearchInputChange}
           />
         </nav>
         <ul className={styles.containerWrapperList}>
