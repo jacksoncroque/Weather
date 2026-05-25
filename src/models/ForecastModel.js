@@ -28,6 +28,7 @@ export function ForecastModel(data) {
       condition: data.current.condition.text, //CONDIÇÃO CLIMÁTICA
       highTemp: forecast.day.maxtemp_c, //TEMPERATURA MÁXIMA
       minTemp: forecast.day.mintemp_c, //TEMPERATURA MÍNIMA
+      preciptation: data.current.precip_mm, //CHANCE DE CHUVA
       alertEvent: data?.alerts?.alert[0]?.event ?? null, //AVISO
       alertDesc: data?.alerts?.alert[0]?.event ?? null, //DESCRIÇÃO AVISO
     },

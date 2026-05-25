@@ -20,7 +20,9 @@ export default defineConfig([
     rules: {
       "react-refresh/only-export-components": "off",
       "no-unused-vars": "off",
-      "no-empty": "off"
+      "no-empty": "off",
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/exhaustive-deps": "off",
     },
   },
 ]);

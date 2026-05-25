@@ -7,11 +7,11 @@ import Navbar from "@/components/Navbar/Navbar";
 import MainContent from "@/components/MainContent";
 
 function App() {
-  const { state } = useGlobalContext();
+/*   const { state } = useGlobalContext();
 
   useEffect(() => {
     console.log(state);
-  }, [state]);
+  }, [state]); */
 
   return (
     <>

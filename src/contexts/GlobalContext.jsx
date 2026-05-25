@@ -26,12 +26,16 @@ const GlobalProvider = ({ children }) => {
 
   // Função que armazena o valor do input
   const handleSearchInputChange = (e) => {
-    setState({ ...state, inputValue: e.target.value }); //"...state" usado para dizer que as outras propriedades do estado continuam iguais
+    setState((prev) => {
+      return { ...prev, inputValue: e.target.value };
+    }); //"...state" usado para dizer que as outras propriedades do estado continuam iguais
   };
 
   // Função que limpa o valor do input
   const handleClearSearchInput = () => {
-    setState({ ...state, inputValue: initialState.inputValue }); //"inputValue: initialState.inputValue" para setar o valor default da aplicação
+    setState((prev) => {
+      return { ...state, inputValue: initialState.inputValue };
+    }); //"inputValue: initialState.inputValue" para setar o valor default da aplicação
   };
 
   const showSucessMessage = (msg) => {
@@ -48,19 +52,26 @@ const GlobalProvider = ({ children }) => {
 
   const handleSearchForecast = async (city = "Caxias do Sul") => {
     try {
-      setState({ ...state, isLoading: true });
+      setState((prev) => ({
+        ...prev,
+        isLoading: true,
+      }));
 
       const forecast = await getForecast(city);
       const futureForecast = await getFutureForecast(city, 12);
 
-      setState({
-        ...state,
+      setState((prev) => ({
+        ...prev,
         currentForecast: forecast,
         tenDayForecast: futureForecast.forecast,
-      });
+      }));
     } catch (error) {
+      console.log(error);
     } finally {
-      setState({ ...state, isLoading: false });
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+      }));
     }
   };
 
@@ -75,12 +86,7 @@ const GlobalProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // const teste = async () => {
-    //   /* const res = await getForecast("Caxias do Sul"); */
-    //   const res = await getFutureForecast("Caxias do Sul", 15);
-    //   console.log(res);
-    // };
-    // teste();
+    handleSearchForecast();
   }, []);
 
   // Provider envolve os componentes filhos

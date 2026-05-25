@@ -1,27 +1,48 @@
+import { useEffect } from "react";
 import { DropletIcon } from "lucide-react";
 import { CiWarning } from "react-icons/ci";
 
 import styles from "./Hero.module.scss";
+import { useGlobalContext } from "../../contexts/GlobalContext";
 
 const Hero = () => {
+  const {
+    state: { currentForecast },
+  } = useGlobalContext();
+
+  useEffect(() => {
+    console.log(currentForecast);
+  }, [currentForecast]);
+
   return (
     <div className={styles.container}>
       <div className={styles.containerWrapper}>
-        <h1>São Paulo</h1>
+        <h1>{currentForecast?.mainInfo.city ?? "-"}</h1>
         <div className={styles.containerWrapperTemperature}>
-          <h2>18°</h2>
+          <h2>
+            {Math.ceil(currentForecast?.mainInfo.temperature ?? 0) || "-"}°
+          </h2>
           <div className={styles.containerWrapperTemperatureDetails}>
-            <h4>Moderate rain</h4>
-            <p>H:21° L:16°</p>
+            <h4>{currentForecast?.mainInfo.condition ?? "-"}</h4>
+            <p>
+              {currentForecast
+                ? `Mín.: ${Math.ceil(currentForecast?.mainInfo.minTemp ?? 0)}° Max.: ${Math.ceil(currentForecast?.mainInfo.highTemp ?? 0)}°`
+                : "-"}
+            </p>
           </div>
         </div>
         <div className={styles.containerWrapperWarning}>
           <span>
-            <DropletIcon size={20}/> Preciptation: 85%
+            <DropletIcon size={20} color="white" />
+            {`Preciptação: ${Math.ceil(currentForecast?.mainInfo.preciptation ?? 0) || "0"}`}
           </span>
-          <span>
-            <CiWarning size={20}/> Flood Warning
-          </span>
+          {currentForecast.mainInfo.alertEvent !== null ? (
+            <span>
+              <CiWarning size={20} /> {currentForecast?.mainInfo.alertEvent ?? null}
+            </span>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
