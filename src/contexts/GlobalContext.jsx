@@ -98,7 +98,7 @@ const GlobalProvider = ({ children }) => {
         tenDayForecast: futureForecast.forecast,
       }));
     } catch (error) {
-      console.log(error);
+      showErrorMessage("Cidade não encontrada, verifique a digitação e tente novamente")
     } finally {
       setState((prev) => ({
         ...prev,

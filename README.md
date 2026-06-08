@@ -1,16 +1,44 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida para consulta de condições climáticas em tempo real e previsão do tempo para os próximos 10 dias.
 
-Currently, two official plugins are available:
+O projeto foi criado com foco em experiência do usuário, consumo de APIs externas e construção de interfaces modernas utilizando React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Preview
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Consulta do clima atual
+- Previsão para até 10 dias
+- Temperatura mínima e máxima
+- Sensação térmica
+- Índice UV
+- Umidade do ar
+- Velocidade do vento
+- Horário do nascer e pôr do sol
+- Interface responsiva para desktop e dispositivos móveis
+- Atualização de dados em tempo real através de API meteorológica
+
+## Tecnologias
+
+- React
+- JavaScript (ES6+)
+- SCSS
+- Vite
+- FetchAPI
+
+## Destaques Técnicos
+
+- Integração com API meteorológica para obtenção de dados em tempo real.
+- Arquitetura baseada em componentes reutilizáveis.
+- Gerenciamento de estado utilizando React Hooks e Context API.
+- Renderização condicional para exibição dinâmica das informações climáticas.
+- Estrutura modular e organizada para facilitar manutenção e escalabilidade.
+- Interface totalmente responsiva para diferentes tamanhos de tela.
+- Foco em performance, legibilidade de código e experiência do usuário.
+
+## Objetivo do Projeto
+
+Este projeto foi desenvolvido para praticar conceitos modernos de desenvolvimento frontend, incluindo integração com APIs externas, gerenciamento de estado em React, componentização e criação de interfaces responsivas.
