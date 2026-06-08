@@ -64,14 +64,17 @@ const GlobalProvider = ({ children }) => {
   };
 
   const handleSearchForecast = async (city) => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
+
     if (city === undefined) {
       city = await getPosition()
         .then((response) => {
           const data = [];
           const lat = response.coords.latitude.toFixed(4);
           const lon = response.coords.longitude.toFixed(4);
-          
-          
 
           data.push(lat);
           data.push(lon);
@@ -85,13 +88,7 @@ const GlobalProvider = ({ children }) => {
         });
     }
 
-
     try {
-      setState((prev) => ({
-        ...prev,
-        isLoading: true,
-      }));
-
       const forecast = await getForecast(city);
       const futureForecast = await getFutureForecast(city, 10);
 

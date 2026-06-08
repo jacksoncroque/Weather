@@ -5,18 +5,24 @@ import { useGlobalContext } from "@/contexts/GlobalContext";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import MainContent from "@/components/MainContent";
+import Loading from "./components/Loading/Loading";
 
 function App() {
-/*   const { state } = useGlobalContext();
+  const { state } = useGlobalContext();
 
   useEffect(() => {
     console.log(state);
-  }, [state]); */
+  }, [state]);
 
   return (
     <>
       <Navbar />
-      <MainContent />
+      {state.isLoading ? (
+        <Loading />
+      ) : (
+        <MainContent />
+      )}
+
       <Footer />
     </>
   );
