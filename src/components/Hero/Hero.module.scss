@@ -1,17 +1,26 @@
+@use "breakpoints" as *;
+
 .container {
   display: flex;
   margin: 0 0 6rem 0;
+  width: 100%;
 
   &Wrapper {
     display: flex;
     flex-direction: column;
     padding: 6rem 0 0 0;
+    width: 100%;
 
     & > h1 {
-      font-size: 6rem;
-      line-height: 3rem;
+      text-align: center;
+      font-size: 4rem;
+      line-height: 4rem;
       font-weight: var(--font-weight-light);
       letter-spacing: -2px;
+
+      @media (min-width: $tablet) {
+        font-size: 6rem;
+      }
     }
 
     &Temperature {
@@ -20,8 +29,12 @@
       justify-content: center;
 
       & > h2 {
-        font-size: 8rem;
+        font-size: 4rem;
         font-weight: var(--font-weight-light);
+
+        @media (min-width: $tablet) {
+        font-size: 8rem;
+      }
       }
 
       &Details {

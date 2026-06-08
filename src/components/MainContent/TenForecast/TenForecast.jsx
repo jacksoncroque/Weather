@@ -3,16 +3,11 @@ import { Calendar } from "lucide-react";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
 
 import styles from "./TenForecast.module.scss";
-import { useEffect } from "react";
 
 const TenForecast = () => {
   const {
     state: { tenDayForecast },
   } = useGlobalContext();
-
-  // useEffect(() => {
-  //   console.log(tenDayForecast);
-  // }, [tenDayForecast]);
 
   return (
     <div className={styles.container}>
@@ -30,6 +25,7 @@ const TenForecast = () => {
                 </p>
                 <img src={item.icon} alt="" />
                 <p>{Math.ceil(item.minTemp)}°</p>
+                <span></span>
                 <p>{Math.ceil(item.maxTemp)}°</p>
               </div>
             );

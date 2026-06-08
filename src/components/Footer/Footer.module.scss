@@ -1,16 +1,15 @@
-@use "sass:map";
-@use "@/styles/queries";
+@use "breakpoints" as *;
 
 .container {
   background-color: var(--secondary-color);
+  width: 100%;
 
   &Wrapper {
     padding: 1rem 0;
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    max-width: map.get(queries.$breakpoints, xll);
 
     &Date {
       color: black;

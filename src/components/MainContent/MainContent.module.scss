@@ -1,18 +1,22 @@
-@use "sass:map";
-@use "@/styles/queries";
+@use "breakpoints" as *;
 
 .container {
   min-height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #181f67;
 
   &Wrapper {
-    width: 90%;
+    width: 100%;
     margin: 0 auto 9rem;
-    max-width: map.get(queries.$breakpoints, xll);
-    padding: 0 6rem;
+    padding: 1rem;
+
+    @media (min-width: $tablet) {
+      width: 90%;
+    }
 
     &Main {
       display: flex;
@@ -21,19 +25,52 @@
         &:first-of-type {
           width: 70%;
           padding: 0 0.5rem 0 0;
+
+          & > div:first-child {
+            margin: 0 0 1rem 0;
+          }
         }
 
         &:last-of-type {
           width: 30%;
           padding: 0 0 0 0.5rem;
+          margin: 1.2rem 0 0 0;
+
+          @media (min-width: $tablet) {
+            margin: 0;
+          }
+        }
+      }
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+
+        & > div {
+          &:first-of-type,
+          &:last-of-type {
+            width: 100%;
+            padding: 0;
+          }
         }
       }
 
       &Grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
-        margin: 1rem 0 0;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+
+        & > div {
+          max-width: 12rem;
+
+          @media (min-width: $tablet) {
+            max-width: none;
+          }
+        }
+
+        @media (min-width: $tablet) {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     }
   }

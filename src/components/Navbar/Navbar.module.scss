@@ -1,13 +1,13 @@
-@use "sass:map";
-@use "@/styles/queries";
+@use "breakpoints" as *;
 
 .container {
   background-color: #0c006b;
+  width: 100%;
 
   &Wrapper {
     height: var(--navbar-height);
-    width: 90%;
-    max-width: map.get(queries.$breakpoints, xll);
+    width: 100%;
+    padding: 0 1rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -21,12 +21,21 @@
       & > img {
         width: 3rem;
         height: 3rem;
-        margin: 0 1rem 0 0;
+        margin: 0 0.5rem 0 0;
+
+        @media (min-width: $tablet) {
+          margin: 0 1rem 0 0;
+        }
       }
       & > h1 {
         font-weight: var(--font-weight-regular);
         color: var(--text-color);
         font-size: 1rem;
+        display: none;
+
+        @media (min-width: $tablet) {
+          display: flex;
+        }
       }
     }
 
@@ -50,11 +59,16 @@
         all: unset;
         width: 100%;
         height: 100%;
+        max-width: 15rem;
         background-color: #242c77;
         border-radius: 9999px;
         display: block;
         padding: 0 0 0 3rem;
         transition: all 0.3s ease-in-out;
+
+        @media (min-width: $tablet) {
+          max-width: 31.25rem;
+        }
 
         &:hover {
           filter: brightness(110%);

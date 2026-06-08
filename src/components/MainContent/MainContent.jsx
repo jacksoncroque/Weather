@@ -147,7 +147,9 @@ const MainContent = () => {
       <div className={styles.containerWrapper}>
         <div className={styles.containerWrapperMain}>
           <div>
-            <HourlyForecast forecast={forecast} />
+            <div>
+              <HourlyForecast forecast={forecast} />
+            </div>
             <div className={styles.containerWrapperMainGrid}>
               <div>
                 <UvIndex />

@@ -21,5 +21,10 @@
   --navbar-height: 4rem;
 
   // Containers
-  --border-radius: 1rem
+  --border-radius: 1rem;
+}
+
+html,
+body {
+  font-size: clamp(14px, 1vw, 16px);
 }

@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .container {
   height: 100%;
 
@@ -25,17 +27,25 @@
       }
 
       & > p {
-        display: flex;
-        align-items: baseline;
-        font-size: 4rem;
-        line-height: 6rem;
         font-weight: var(--font-weight-light);
+        font-size: 4rem;
+
+        @media (min-width: $tablet) {
+          display: flex;
+          align-items: baseline;
+          font-size: 4rem;
+        }
 
         & > span {
           display: flex;
-          line-height: normal;
-          margin: 0 0.5rem;
+          align-content: flex-start;
           font-weight: var(--font-weight-light);
+          margin: -2rem 0 2rem 0.5rem;
+
+          @media (min-width: $tablet) {
+            line-height: normal;
+            margin: 0 0.5rem;
+          }
         }
       }
     }
