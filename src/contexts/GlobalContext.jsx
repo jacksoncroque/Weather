@@ -57,7 +57,35 @@ const GlobalProvider = ({ children }) => {
     toast.dismiss(msg);
   };
 
-  const handleSearchForecast = async (city = "Caxias do Sul") => {
+  const getPosition = () => {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  };
+
+  const handleSearchForecast = async (city) => {
+    if (city === undefined) {
+      city = await getPosition()
+        .then((response) => {
+          const data = [];
+          const lat = response.coords.latitude.toFixed(4);
+          const lon = response.coords.longitude.toFixed(4);
+          
+          
+
+          data.push(lat);
+          data.push(lon);
+
+          const coordenates = data.join(",");
+
+          return coordenates;
+        })
+        .catch(() => {
+          return "Caxias do Sul";
+        });
+    }
+
+
     try {
       setState((prev) => ({
         ...prev,

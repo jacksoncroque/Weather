@@ -10,7 +10,10 @@ export async function getForecast(city) {
 
   let tomorrow = moment(today).add(1, "day").format("YYYY-MM-DD");
 
-  const res2 = await apiInstance.get("forecast.json", { q: city, dt: tomorrow });
+  const res2 = await apiInstance.get("forecast.json", {
+    q: city,
+    dt: tomorrow,
+  });
 
   if (res.success && res2.success) {
     return ForecastModel(res.body, res2.body);
