@@ -23,6 +23,7 @@
     &Climate {
       display: flex;
       align-items: center;
+      overflow-x: auto;
 
       & > span {
         margin: 0 1.5rem 0 0;

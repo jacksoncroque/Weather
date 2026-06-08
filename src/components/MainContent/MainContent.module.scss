@@ -12,19 +12,19 @@
     width: 90%;
     margin: 0 auto 9rem;
     max-width: map.get(queries.$breakpoints, xll);
+    padding: 0 6rem;
 
     &Main {
       display: flex;
-      margin: 0 6rem;
 
       & > div {
         &:first-of-type {
-          flex: 4;
+          width: 70%;
           padding: 0 0.5rem 0 0;
         }
 
         &:last-of-type {
-          flex: 2.5;
+          width: 30%;
           padding: 0 0 0 0.5rem;
         }
       }
