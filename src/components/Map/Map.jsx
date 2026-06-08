@@ -43,7 +43,7 @@ const Map = () => {
           <h3>
             <ThermometerSnowflake /> SENSAÇÃO
           </h3>
-          <p>{Math.ceil(currentForecast?.current.feelsLike) ?? "-"}°</p>
+          <p>{Math.ceil(currentForecast?.current?.feelsLike) || 0}°</p>
         </div>
         <div className={styles.containerWrapperSubtitle}>
           <p>{getFeelsLikeMessage(currentForecast)}</p>

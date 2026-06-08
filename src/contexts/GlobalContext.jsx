@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { ToastContainer, Bounce, toast } from "react-toastify";
 import { getForecast, getFutureForecast } from "../services/forecast";
 
@@ -27,8 +33,9 @@ const GlobalProvider = ({ children }) => {
   // Função que armazena o valor do input
   const handleSearchInputChange = (e) => {
     setState((prev) => {
+      // "...prev" usado para dizer que as outras propriedades do estado continuam iguais
       return { ...prev, inputValue: e.target.value };
-    }); //"...state" usado para dizer que as outras propriedades do estado continuam iguais
+    });
   };
 
   // Função que limpa o valor do input
@@ -88,6 +95,31 @@ const GlobalProvider = ({ children }) => {
   useEffect(() => {
     handleSearchForecast();
   }, []);
+
+  const debounce = (fn, delay) => {
+    let timeoutId;
+
+    return (...args) => {
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() => {
+        fn(...args);
+      }, delay);
+    };
+  };
+
+  const debouncedSearch = useCallback(
+    debounce((value) => {
+      handleSearchForecast(value);
+    }, 500),
+    [],
+  );
+
+  useEffect(() => {
+    if (state.inputValue !== "") {
+      debouncedSearch(state.inputValue);
+    }
+  }, [state.inputValue]);
 
   // Provider envolve os componentes filhos
   // e entrega o "values" para todos eles.

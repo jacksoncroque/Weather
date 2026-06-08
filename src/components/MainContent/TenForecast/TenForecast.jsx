@@ -10,9 +10,9 @@ const TenForecast = () => {
     state: { tenDayForecast },
   } = useGlobalContext();
 
-  useEffect(() => {
-    console.log(tenDayForecast);
-  }, [tenDayForecast]);
+  // useEffect(() => {
+  //   console.log(tenDayForecast);
+  // }, [tenDayForecast]);
 
   return (
     <div className={styles.container}>
@@ -29,8 +29,8 @@ const TenForecast = () => {
                     item.dayOfWeek.slice(1)}
                 </p>
                 <img src={item.icon} alt="" />
-                <p>{Math.ceil(item.minTemp)}</p>
-                <p>{Math.ceil(item.maxTemp)}</p>
+                <p>{Math.ceil(item.minTemp)}°</p>
+                <p>{Math.ceil(item.maxTemp)}°</p>
               </div>
             );
           })}
