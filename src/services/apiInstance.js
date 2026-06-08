@@ -16,8 +16,8 @@ export const apiInstance = {
       const urlParameters = aux.join("&"); // Junta as strings do aux com um &
 
       // Vai retornar o endereço URL com o método e a chave
-      const fetchUrl = `${apiUrl}/${method}.json?key=${apiKey}&lang=pt&${urlParameters}`;
-      
+      const fetchUrl = `${apiUrl}/${method}?key=${apiKey}&lang=pt&${urlParameters}`;
+
       //Retorna a resposta da requisição, função fetch é usada para fazer requisições HTTP
       const response = await fetch(fetchUrl, {
         method: "GET",

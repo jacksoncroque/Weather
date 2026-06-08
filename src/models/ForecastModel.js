@@ -1,16 +1,9 @@
 import moment from "moment/min/moment-with-locales";
 moment.locale("pt-br");
 
-export function ForecastModel(data) {
-  const [date, hour] = new Date()
-    .toLocaleString("sv-SE", {
-      timeZone: "America/Sao_Paulo",
-    })
-    .split(" ");
-
-  const forecast = (data?.forecast?.forecastday ?? []).find(
-    (item) => item.date === date,
-  );
+export function ForecastModel(data, data2) {
+  const forecast = data?.forecast?.forecastday[0];
+  const forecast2 = data2?.forecast?.forecastday[0];
 
   return {
     current: {
@@ -36,20 +29,22 @@ export function ForecastModel(data) {
       alertDesc: data?.alerts?.alert[0]?.event ?? null, //DESCRIÇÃO AVISO
     },
 
-    forecast: (forecast?.hour ?? [])
-      .filter((item) => {
-        const itemHour = item.time.split(" ")[1].split(":")[0];
-
-        return Number(hour.split(":")[0]) <= Number(itemHour);
-      })
-      .map((item) => {
-        return {
-          id: item.time_epoch,
-          hour: item.time.split(" ")[1],
-          icon: item.condition.icon,
-          temperature: `${Math.ceil(item.temp_c)}°`,
-        };
+    forecast: [
+      ...(forecast?.hour ?? []).filter((item) => {
+        return (
+          Number(moment().utc("-03:00").format("HH")) <=
+          Number(moment(item.time).format("HH"))
+        );
       }),
+      ...(forecast2?.hour ?? []),
+    ].map((item) => {
+      return {
+        id: item.time_epoch,
+        hour: item.time.split(" ")[1],
+        icon: item.condition.icon,
+        temperature: `${Math.ceil(item.temp_c)}°`,
+      };
+    }),
   };
 }
 
