@@ -22,9 +22,14 @@
 
   // Containers
   --border-radius: 1rem;
+
+  // Largura
+  --max-container-width: 1200px;
 }
 
 html,
 body {
   font-size: clamp(14px, 1vw, 16px);
+  width: 100%;
+  
 }

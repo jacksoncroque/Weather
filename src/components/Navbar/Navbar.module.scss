@@ -9,9 +9,11 @@
     width: 100%;
     padding: 0 1rem;
     margin: 0 auto;
+    max-width: var(--max-container-width);
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 
     &Title {
       display: flex;

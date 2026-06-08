@@ -2,6 +2,7 @@
 
 .container {
   height: 100%;
+  width: 100%;
 
   &Wrapper {
     background-color: var(--secondary-color);
@@ -11,6 +12,15 @@
       rgba(0, 0, 0, 0.25) 0px 14px 28px,
       #00000038 0px 10px 10px;
     height: 100%;
+    width: 100%;
+
+    @media (width: $tablet) {
+      margin: 1rem 0 0 0;
+    }
+
+    @media (width: $desktop) {
+      height: 97%;
+    }
 
     & > h3 {
       display: flex;
@@ -37,9 +47,6 @@
 
         &:last-child {
           border-bottom: none;
-        }
-
-        @media (min-width: $tablet) {
         }
 
         & > p {

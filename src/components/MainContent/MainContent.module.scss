@@ -11,8 +11,9 @@
 
   &Wrapper {
     width: 100%;
-    margin: 0 auto 9rem;
     padding: 1rem;
+    margin: 0 auto 9rem;
+    max-width: var(--max-container-width);
 
     @media (min-width: $tablet) {
       width: 90%;
