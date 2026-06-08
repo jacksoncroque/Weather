@@ -7,7 +7,8 @@ import { useGlobalContext } from "@/contexts/GlobalContext";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const { state, handleSearchInputChange, handleSearchInputClick } = useGlobalContext();
+  const { state, handleSearchInputChange, handleSearchInputClick } =
+    useGlobalContext();
 
   return (
     <div className={styles.container}>
@@ -16,7 +17,10 @@ const Navbar = () => {
           <img src="./logo.png" alt="Weather App" aria-label="Weather App" />
           <h1>Weather App</h1>
         </div>
-        <nav className={styles.containerWrapperNav}>
+        <form
+          className={styles.containerWrapperNav}
+          onSubmit={(e) => e.preventDefault()}
+        >
           <input
             type="text"
             name="searchInput"
@@ -26,10 +30,10 @@ const Navbar = () => {
             value={state.inputValue}
             onChange={handleSearchInputChange}
           />
-          <button onClick={handleSearchInputClick}>
-            <SearchIcon size={25}/>
+          <button onClick={handleSearchInputClick} type="submit">
+            <SearchIcon size={25} />
           </button>
-        </nav>
+        </form>
         <ul className={styles.containerWrapperList}>
           <li>
             <a

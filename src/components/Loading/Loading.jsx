@@ -8,7 +8,7 @@ const Loading = () => {
       <div className={styles.containerWrapper}>
         <div>
           <div style={{ width: 80 }}>
-            <ClipLoader color="#fff" size={50}/>
+            <ClipLoader color="#000" size={50}/>
           </div>
           <div>
             Carregando

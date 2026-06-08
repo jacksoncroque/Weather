@@ -1,7 +1,7 @@
 @use "breakpoints" as *;
 
 .container {
-  background-color: #0c006b;
+  background-color: #4DA3FF;
   width: 100%;
 
   &Wrapper {
@@ -52,7 +52,7 @@
         width: 100%;
         height: 100%;
         max-width: 15rem;
-        background-color: #242c77;
+        background-color: var(--secondary-color);
         border-radius: 9999px 0 0 9999px;
         transition: all 0.3s ease-in-out;
 
@@ -65,13 +65,13 @@
         }
 
         &::placeholder {
-          color: #aaabab;
+          color: #2d2d2d;
         }
       }
 
       & > button {
         all: unset;
-        background-color: #242c77;
+        background-color: var(--secondary-color);
         border-radius: 0 9999px 9999px 0;
         padding: 0;
         max-width: 5rem;

@@ -8,7 +8,7 @@ const Footer = () => {
           <p>
             Developed by{" "}
             <a
-              href="https://github.com/jacksoncroque"
+              href="https://jacksoncoelho-web-portfolio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >

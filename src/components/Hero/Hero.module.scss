@@ -2,7 +2,7 @@
 
 .container {
   display: flex;
-  margin: 0 0 6rem 0;
+  margin: 0 0 1rem 0;
   width: 100%;
 
   &Wrapper {
@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 100%;
     padding: 1rem;
-    margin: 6rem auto 0;
+    margin: 3rem auto 0;
     max-width: var(--max-container-width);
     
 
