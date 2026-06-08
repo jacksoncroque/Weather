@@ -7,7 +7,7 @@ import { useGlobalContext } from "@/contexts/GlobalContext";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
-  const { state, handleSearchInputChange } = useGlobalContext();
+  const { state, handleSearchInputChange, handleSearchInputClick } = useGlobalContext();
 
   return (
     <div className={styles.container}>
@@ -17,7 +17,6 @@ const Navbar = () => {
           <h1>Weather App</h1>
         </div>
         <nav className={styles.containerWrapperNav}>
-          <SearchIcon size={20} />
           <input
             type="text"
             name="searchInput"
@@ -27,6 +26,9 @@ const Navbar = () => {
             value={state.inputValue}
             onChange={handleSearchInputChange}
           />
+          <button onClick={handleSearchInputClick}>
+            <SearchIcon size={25}/>
+          </button>
         </nav>
         <ul className={styles.containerWrapperList}>
           <li>

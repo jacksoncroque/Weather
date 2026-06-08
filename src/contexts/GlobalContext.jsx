@@ -107,11 +107,20 @@ const GlobalProvider = ({ children }) => {
     }
   };
 
+  const handleSearchInputClick = () => {
+    handleSearchForecast(state.inputValue);
+    setState((prev) => ({
+      ...prev,
+      inputValue: "",
+    }));
+  };
+
   // objeto que será compartilhado
   // para toda a aplicação.
   const values = {
     state,
     handleSearchInputChange,
+    handleSearchInputClick,
     showSucessMessage,
     showErrorMessage,
     dismissMessage,
@@ -140,11 +149,11 @@ const GlobalProvider = ({ children }) => {
     [],
   );
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (state.inputValue !== "") {
       debouncedSearch(state.inputValue);
     }
-  }, [state.inputValue]);
+  }, [state.inputValue]); */
 
   // Provider envolve os componentes filhos
   // e entrega o "values" para todos eles.
