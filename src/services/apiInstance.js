@@ -31,8 +31,6 @@ export const apiInstance = {
         body: data, // Retorno da API
       };
     } catch (error) {
-      console.log(error);
-
       // Caso houver erro no try, a função ainda retorna uma resposta padronizada
       // Qualquer erro não previsto, retorna a mensagem desse erro ou 'erro interno' por padrão
       return {

@@ -10,18 +10,12 @@ import Loading from "./components/Loading/Loading";
 function App() {
   const { state } = useGlobalContext();
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
+  useEffect(() => {}, [state]);
 
   return (
     <>
       <Navbar />
-      {state.isLoading ? (
-        <Loading />
-      ) : (
-        <MainContent />
-      )}
+      {state.isLoading ? <Loading /> : <MainContent />}
 
       <Footer />
     </>
