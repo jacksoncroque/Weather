@@ -31,5 +31,6 @@ html,
 body {
   font-size: clamp(14px, 1vw, 16px);
   width: 100%;
+  box-sizing: border-box;
   
 }

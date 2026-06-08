@@ -62,14 +62,13 @@
         grid-template-columns: repeat(2, 1fr);
 
         & > div {
-          max-width: 12rem;
 
           @media (min-width: $tablet) {
             max-width: none;
           }
         }
 
-        @media (min-width: $tablet) {
+        @media (min-width: $laptop) {
           grid-template-columns: repeat(3, 1fr);
         }
       }
