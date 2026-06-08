@@ -8,7 +8,7 @@ export default defineConfig({
       "@": new URL("./src", import.meta.url).pathname,
     },
   },
-  base: "/Weather/",
+  base: "/Weather",
   css: {
     preprocessorOptions: {
       scss: {
