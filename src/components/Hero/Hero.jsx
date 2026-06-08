@@ -29,10 +29,15 @@ const Hero = () => {
           </div>
         </div>
         <div className={styles.containerWrapperWarning}>
-          <span>
-            <DropletIcon size={20} color="white" />
-            {`Preciptação: ${Math.ceil(currentForecast?.mainInfo.preciptation ?? 0) || "0"}`}
-          </span>
+          {currentForecast?.mainInfo.preciptation ? (
+            <span>
+              <DropletIcon size={20} color="white" />
+              {`Preciptação: ${Math.ceil(currentForecast?.mainInfo.preciptation ?? 0) || "0"} mm`}
+            </span>
+          ) : (
+            ""
+          )}
+
           {currentForecast?.mainInfo.alertEvent ? (
             <span>
               <CiWarning size={20} />{" "}
