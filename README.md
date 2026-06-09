@@ -6,7 +6,7 @@ O projeto foi criado com foco em experiência do usuário, consumo de APIs exter
 
 ## Preview
 
-
+![Preview do projeto](./src/assets/gif/weather_demo.gif)
 
 ## Funcionalidades
 
